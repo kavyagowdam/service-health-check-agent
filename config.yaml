@@ -1,0 +1,24 @@
+logLevel: info
+apiPort: 8080
+
+checks:
+  - name: Google
+    type: http
+    target: https://google.com
+    interval: 30s
+    timeout: 5s
+    expectedStatus: 200
+
+  - name: Kubernetes-API-Health
+    type: http
+    target: https://192.168.49.2:8443/healthz
+    interval: 30s
+    timeout: 5s
+    skipTLSVerify: true
+    
+  - name: Minikube-DNS
+    type: tcp
+    target: 192.168.58.2:53
+    interval: 20s
+    timeout: 3s
+    # Replace 192.168.49.2 with your actual minikube IP
