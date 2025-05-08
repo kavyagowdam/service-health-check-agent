@@ -9,7 +9,7 @@ on:
 
 jobs:
   called-workflow:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
       - name: desiplay name
         run: echo ${{inputs.name}}
