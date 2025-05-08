@@ -1,0 +1,15 @@
+name: re usable workflow
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: "enter your name"
+        type: string
+        required: true
+
+jobs:
+  called-workflow:
+    runs-on: ubuntu_latest
+    steps:
+      - name: desiplay name
+        run: echo ${{inputs.name}}
