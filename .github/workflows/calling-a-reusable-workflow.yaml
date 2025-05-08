@@ -1,0 +1,14 @@
+name: calling a reusable workflow
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "enter your name"
+        type: string
+        required: true
+jobs:
+  test-reusable-workflow:
+    uses: ./.github/workflows/reusable-workflow.yaml
+    with:
+      name: ${{ inputs.name }}
+    
